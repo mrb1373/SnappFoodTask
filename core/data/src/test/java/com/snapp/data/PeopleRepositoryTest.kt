@@ -1,11 +1,14 @@
 package com.snapp.data
 
+import android.util.Log
 import com.snapp.common.retrieveId
 import com.snapp.data.people.PeopleRepositoryImpl
 import com.snapp.network.api.PeopleService
 import com.snapp.testing.peopleTestData
 import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
+import io.mockk.mockkStatic
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import kotlin.test.assertEquals
@@ -29,6 +32,17 @@ class PeopleRepositoryTest {
         // Then
         assertEquals(result.isSuccess, true)
         assertEquals(result.getOrThrow() , expectedResult)
+    }
+
+    @Test
+    fun getCurrentCharacter_shouldReturnFailure_whenNetworkCallFails() = runTest {
+        mockkStatic(Log::class)
+        val exception = Exception("Network error")
+        coEvery { peopleService.getPeople(any()) } throws exception
+        every { Log.i(any(), any(), any()) } returns 0
+        val result = peopleRepository.getPeople("1")
+        assertEquals(result.isFailure, true)
+        assertEquals(result.exceptionOrNull(), exception)
     }
 
     @Test
