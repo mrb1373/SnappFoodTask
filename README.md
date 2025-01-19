@@ -2,10 +2,10 @@
 
 This project is a task developed for a Snap Food interview.
 ## Screenshots
-### HomeScreen 
-![Home Screen](screenshots/homeScreen.png)
-### DetailsScreen
-![Detail Screen](screenshots/detailScreen.png)
+<div style="display: flex; gap: 10px;">
+  <img src="screenshots/homeScreen.png" alt="Home Screen" width="300"/>
+  <img src="screenshots/detailScreen.png" alt="Detail Screen" width="300"/>
+</div>
 
 ## Features
 
