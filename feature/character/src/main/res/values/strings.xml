@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error">Error</string>
+    <string name="birth_year">Birth Year</string>
+    <string name="height">Height</string>
+    <string name="species">Species</string>
+    <string name="home_world">Home World</string>
+    <string name="population">Population</string>
+    <string name="films">Films:</string>
+    <string name="title">Title: %1$s</string>
+    <string name="opening_crawl">Opening Crawl: %1$s</string>
+</resources>

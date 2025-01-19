@@ -1,5 +1,7 @@
 package com.snapp.designsystem.components
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -14,8 +16,9 @@ import androidx.compose.ui.unit.dp
 fun HeaderText(text: String, modifier: Modifier = Modifier) {
     Text(
         text = text,
-        style = MaterialTheme.typography.headlineMedium,
-        modifier = Modifier.padding(bottom = 16.dp)
+        style = MaterialTheme.typography.headlineSmall,
+        modifier = Modifier.padding(bottom = 16.dp),
+        color = MaterialTheme.colorScheme.primary
     )
 }
 
@@ -39,3 +42,15 @@ fun CaptionText(text: String, modifier: Modifier = Modifier) {
         color = MaterialTheme.colorScheme.onSurface,
     )
 }
+
+@Composable
+fun CharacterDetailItem(label: String, value: String) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(text = "$label:", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
+        Text(text = value, style = MaterialTheme.typography.bodyMedium)
+    }
+}
+
